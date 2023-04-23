@@ -11,7 +11,7 @@
 //   howpublished = {Cryptology ePrint Archive, Report 2014/816},
 //   year = {2014},
 //   note = {\url{https://eprint.iacr.org/2014/816}},
-// @author TPOC: 
+// @author TPOC: contact@hesea-crypto.org
 //
 // @copyright Copyright (c) 2019, Duality Technologies Inc.
 // All rights reserved.
@@ -34,6 +34,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "fhew.h"
+#include <cstdint>
 
 namespace lbcrypto {
 
@@ -363,7 +364,8 @@ void RingGSWAccumulatorScheme::AddToACCGINX(
   // cycltomic order
   uint32_t m = 2 * params->GetLWEParams()->GetN();
   uint32_t digitsG2 = params->GetDigitsG2();
-  int64_t q = params->GetLWEParams()->Getq().ConvertToInt();
+  // int64_t q = params->GetLWEParams()->Getq().ConvertToInt();
+  int64_t q = m;
   const shared_ptr<ILNativeParams> polyParams = params->GetPolyParams();
 
   std::vector<NativePoly> ct = acc->GetElements()[0];

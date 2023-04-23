@@ -100,7 +100,7 @@ namespace lbcrypto {
     using LWEPrivateKey = std::shared_ptr<LWEPrivateKeyImpl>;
     using ConstLWEPrivateKey = const std::shared_ptr<const LWEPrivateKeyImpl>;
 
-
+    using LWEPlaintextModulus = uint64_t;
     //! Binfhe_end
 
 
@@ -321,6 +321,35 @@ namespace lbcrypto {
 
 
         //! BinFHE_start
+        //! Designd for nn_multi
+        void Generate_Default_params();
+
+        /**
+        * Encrypt message without noise
+        */
+        LWECiphertext HESea_TraivlEncrypt(LWEPlaintext value, LWEPlaintextModulus p);
+
+        /**
+            * Evaluates SignFunc
+            */
+        LWECiphertext HESea_MyEvalSigndFunc(ConstLWECiphertext ct, LWEPlaintextModulus p) const;
+
+        /**
+            * Encrypt message with modulus p
+        
+            */
+        LWECiphertext HESea_Encrypt(ConstLWEPrivateKey sk, const LWEPlaintext& m, const LWEPlaintextModulus& p);
+
+        /**
+            * Decrypt message with modulus p
+            */
+        void HESea_Decrypt(ConstLWEPrivateKey sk, ConstLWECiphertext ct, LWEPlaintext* result, LWEPlaintextModulus p) const;
+
+                
+
+
+        //! Designd for nn_mulit
+
         /**
          * Bootstraps a ciphertext (without peforming any operation)
          *

@@ -30,6 +30,8 @@
 
 #include "fhew.h"
 #include "lwe.h"
+#include "lwecore.h"
+#include "math/backend.h"
 #include "ringcore.h"
 #include "utils/serializable.h"
 
@@ -90,6 +92,8 @@ using LWEPrivateKey = std::shared_ptr<LWEPrivateKeyImpl>;
 
 using ConstLWEPrivateKey = const std::shared_ptr<const LWEPrivateKeyImpl>;
 
+using LWEPlaintextModulus = uint64_t;
+
 /**
  * @brief BinFHEContext
  *
@@ -130,6 +134,8 @@ class BinFHEContext : public Serializable {
    * @return create the cryptocontext
    */
   void GenerateBinFHEContext(BINFHEPARAMSET set, BINFHEMETHOD method = GINX);
+
+  void Generate_Default_params();
 
   /**
    * Gets the refreshing key (used for serialization).
@@ -251,6 +257,30 @@ class BinFHEContext : public Serializable {
    * @return a shared pointer to the resulting ciphertext
    */
   LWECiphertext EvalConstant(bool value) const;
+
+
+  /**
+   * Encrypt message without noise
+  */
+  LWECiphertext TraivlEncrypt(LWEPlaintext value, LWEPlaintextModulus p);
+
+  /**
+    * Evaluates SignFunc
+    */
+  LWECiphertext MyEvalSigndFunc(ConstLWECiphertext ct, LWEPlaintextModulus p) const;
+
+  /**
+    * Encrypt message with modulus p
+  
+    */
+  LWECiphertext Encrypt(ConstLWEPrivateKey sk, const LWEPlaintext& m, const LWEPlaintextModulus& p, BINFHEOUTPUT output);
+
+  /**
+    * Decrypt message with modulus p
+    */
+  void Decrypt(ConstLWEPrivateKey sk, ConstLWECiphertext ct, LWEPlaintext* result, LWEPlaintextModulus p) const;
+
+
 
   const std::shared_ptr<RingGSWCryptoParams> GetParams() { return m_params; }
 

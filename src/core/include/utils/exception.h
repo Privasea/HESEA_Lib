@@ -136,14 +136,14 @@ class type_error : public palisade_error {
       : palisade_error(file, line, what) {}
 };
 
-// use this error when serializing palisade objects
+// use this error when serializing hesea objects
 class serialize_error : public palisade_error {
  public:
   serialize_error(const std::string& file, int line, const std::string& what)
       : palisade_error(file, line, what) {}
 };
 
-// use this error when deserializing palisade objects
+// use this error when deserializing hesea objects
 class deserialize_error : public palisade_error {
  public:
   deserialize_error(const std::string& file, int line, const std::string& what)

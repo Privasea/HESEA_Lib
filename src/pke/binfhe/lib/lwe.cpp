@@ -6,7 +6,7 @@
 //   howpublished = {Cryptology ePrint Archive, Report 2014/816},
 //   year = {2014},
 //   note = {\url{https://eprint.iacr.org/2014/816}},
-// @author TPOC: 
+// @author TPOC: contact@hesea-crypto.org
 // @copyright Copyright (c) 2019, Duality Technologies Inc.
 // All rights reserved.
 // Redistribution and use in source and binary forms, with or without

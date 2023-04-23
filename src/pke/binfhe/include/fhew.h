@@ -108,6 +108,33 @@ class RingGSWAccumulatorScheme {
       const std::shared_ptr<const LWECiphertextImpl> ct1,
       const std::shared_ptr<LWEEncryptionScheme> LWEscheme) const;
 
+  /**
+   * Main accumulator function used in bootstrapping - AP variant
+   *
+   * @param params a shared pointer to RingGSW scheme parameters
+   * @param &input input ciphertext
+   * @param acc previous value of the accumulator
+   */
+  void AddToACCAP(const std::shared_ptr<RingGSWCryptoParams> params,
+                  const RingGSWCiphertext &input,
+                  std::shared_ptr<RingGSWCiphertext> acc) const;
+                  
+   /**
+   * Main accumulator function used in bootstrapping - GINX variant
+   *
+   * @param params a shared pointer to RingGSW scheme parameters
+   * @param &input1 input ciphertext 1
+   * @param &input2 input ciphertext 2
+   * @param &a integer a in each step of GINX accumulation
+   * @param acc previous value of the accumulator
+   */
+
+  void AddToACCGINX(const std::shared_ptr<RingGSWCryptoParams> params,
+                    const RingGSWCiphertext &input1,  
+                    const RingGSWCiphertext &input2, 
+                    const NativeInteger &a,
+                    std::shared_ptr<RingGSWCiphertext> acc) const;
+
  private:
   /**
    * Generates a refreshing key - GINX variant
@@ -165,32 +192,7 @@ class RingGSWAccumulatorScheme {
       const std::shared_ptr<RingGSWCryptoParams> params,
       const NativePoly &skFFT, const LWEPlaintext &m) const;
 
-  /**
-   * Main accumulator function used in bootstrapping - AP variant
-   *
-   * @param params a shared pointer to RingGSW scheme parameters
-   * @param &input input ciphertext
-   * @param acc previous value of the accumulator
-   */
-  void AddToACCAP(const std::shared_ptr<RingGSWCryptoParams> params,
-                  const RingGSWCiphertext &input,
-                  std::shared_ptr<RingGSWCiphertext> acc) const;
-                  
-   /**
-   * Main accumulator function used in bootstrapping - GINX variant
-   *
-   * @param params a shared pointer to RingGSW scheme parameters
-   * @param &input1 input ciphertext 1
-   * @param &input2 input ciphertext 2
-   * @param &a integer a in each step of GINX accumulation
-   * @param acc previous value of the accumulator
-   */
 
-  void AddToACCGINX(const std::shared_ptr<RingGSWCryptoParams> params,
-                    const RingGSWCiphertext &input1,  
-                    const RingGSWCiphertext &input2, 
-                    const NativeInteger &a,
-                    std::shared_ptr<RingGSWCiphertext> acc) const;
 
   /**
    * Takes an RLWE ciphertext input and outputs a vector of its digits, i.e., an
