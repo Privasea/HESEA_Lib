@@ -1,4 +1,4 @@
-// @file palisadebase64.cpp palisade native base 64 utlities.
+// @file palisadebase64.cpp hesea native base 64 utlities.
 // @author TPOC: 
 //
 // @copyright Copyright (c) 2019, New Jersey Institute of Technology (NJIT)
