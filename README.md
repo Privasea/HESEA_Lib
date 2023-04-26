@@ -1,7 +1,7 @@
 # HESea Cryptography Library
 
 <p align="center">
-  <a href="https://www.privasea.ai//"><img src="https://github.com/Privasea/Miscellaneous/blob/3be7ff3c2d9f7e955e80f6637b5098fdb4583e3a/Figures/Logo/Privasea-Logo.jpg" width=40%  /></a>
+  <a href="https://www.privasea.ai"><img src="https://github.com/Privasea/Miscellaneous/blob/3be7ff3c2d9f7e955e80f6637b5098fdb4583e3a/Figures/Logo/Privasea-Logo.jpg" width=40%  /></a>
 </p>
 
 <p align="center">
