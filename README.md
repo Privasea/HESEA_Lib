@@ -1,22 +1,22 @@
 # HESea Cryptography Library
 
 <p align="center">
-  <a href="https://www.privasea.tech//"><img src="https://github.com/Privasea/Miscellaneous/blob/3be7ff3c2d9f7e955e80f6637b5098fdb4583e3a/Figures/Logo/Privasea-Logo.jpg" width=40%  /></a>
+  <a href="https://www.privasea.ai//"><img src="https://github.com/Privasea/Miscellaneous/blob/3be7ff3c2d9f7e955e80f6637b5098fdb4583e3a/Figures/Logo/Privasea-Logo.jpg" width=40%  /></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Privasea"><img src="https://img.shields.io/badge/Playground-Privasea_Technology-brightgreen?logo=Parity%20Substrate" /></a>
-  <a href="https://www.privasea.ai//"><img src="https://img.shields.io/badge/made%20by-Privasea%20Tech-blue.svg?style=flat-square" /></a>
+  <a href="https://www.privasea.ai"><img src="https://img.shields.io/badge/made%20by-Privasea%20Tech-blue.svg?style=flat-square" /></a>
   <a href="https://github.com/Privasea/HESEA_Lib"><img  src="https://img.shields.io/badge/project-HESEA_Lib-yellow.svg?style=flat-square" /></a>
 </p>
 
 # Table of Contents
 
 - [Introduction](#introduction)
-- [Build Instructions](#build instructions)
-- [Running Test](#running test)
+- [Build Instructions](#build)
+- [Running Test](#test)
 - [Example](#example)
-- [Supported Operating Systems](#supported operating systems)
+- [Environment](#environment)
 - [Reference](#reference)
 - [Lincese](#lincese)
 
@@ -32,9 +32,8 @@ HESea is an open-source library, which means that users can inspect and modify t
 
 Overall, HESea is a powerful and robust FHE library that offers a wide range of advanced features and optimizations for developers who want to implement secure computation in privacy-preserving machine learning. With its advanced functionalities, ease of use, and high performance, HESea is an ideal choice for developers looking to build secure and efficient applications.
 
-[License Information](LICENSE)
 
-## Build Instructions
+## Build
 
 We use CMake to build HESea. The high-level (platform-independent) procedure for building HESEA is as follows (for OS-specific instructions, see the section "Detailed information about building HESEA" at the bottom of this page):
 
@@ -75,7 +74,7 @@ After the "make" completes, you should see the HESEA library files in the lib fo
    are copied directly to the "lib" folder. For example, if no installation path is provided in Ubuntu (and many other Unix-based OSes), the header and library
    binary files will be placed in "/usr/local/include/hesea" and "/usr/local/lib", respectively.
 
-## Running Test
+## Test
 
 Run unit tests to make sure all capabilities operate as expected
 
@@ -138,7 +137,7 @@ int main() {
 gcc -xc++ -lstdc++ -shared-libgcc test.cpp -o test -I /usr/local/include/hesea  -L /usr/local/lib -libHESEApke.so
 ```
 
-## Supported Operating Systems
+## Environment
 
 HESEA CI continually tests our builds on the following operating systems:
 
@@ -175,4 +174,4 @@ HESEA provides many CMake/make configuration options, such as installing specifi
 
 ## Lincese
 
-HESEA Library uses BSD 2-Clause License.
+HESEA Library uses BSD 2-Clause License. More can find [License Information](LICENSE).
