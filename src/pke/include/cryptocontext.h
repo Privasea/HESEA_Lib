@@ -233,51 +233,6 @@ namespace lbcrypto {
         }
 
         /**
-         * TypeCheck makes sure that an operation between two ciphertexts is permitted
-         * This is intended for mutable methods, hence inputs are Ciphretext instead
-         * of ConstCiphertext.
-         *
-         * @param a
-         * @param b
-         */
-        /*
-       void TypeCheck(Ciphertext<Element> a,
-                      Ciphertext<Element> b,
-                      CALLER_INFO_ARGS_HDR) const {
-         if (a == nullptr || b == nullptr) {
-           std::string errorMsg(std::string("Null Ciphertext") + CALLER_INFO);
-           HESEA_THROW(type_error, errorMsg);
-         }
-         if (a->GetCryptoContext().get() != this) {
-           std::string errorMsg(
-             std::string("Ciphertext was not created in this CryptoContext") +
-             CALLER_INFO);
-           HESEA_THROW(type_error, errorMsg);
-         }
-         if (a->GetCryptoContext() != b->GetCryptoContext()) {
-           std::string errorMsg(
-             std::string("Ciphertexts were not created in the same CryptoContext") +
-             CALLER_INFO);
-           HESEA_THROW(type_error, errorMsg);
-         }
-         if (a->GetKeyTag() != b->GetKeyTag()) {
-           std::string errorMsg(
-             std::string("Ciphertexts were not encrypted with same keys") +
-             CALLER_INFO);
-           HESEA_THROW(type_error, errorMsg);
-         }
-         if (a->GetEncodingType() != b->GetEncodingType()) {
-           std::stringstream ss;
-           ss << "Ciphertext encoding types " << a->GetEncodingType();
-           ss << " and " << b->GetEncodingType();
-           ss << " do not match";
-           ss << CALLER_INFO;
-           HESEA_THROW(type_error, ss.str());
-         }
-       }
-       */
-
-        /**
          * TypeCheck makes sure that an operation between a ciphertext and a plaintext
          * is permitted
          * @param a
