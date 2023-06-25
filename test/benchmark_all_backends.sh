@@ -1,4 +1,3 @@
-
 smallbmargs="--benchmark_report_aggregates_only=true --benchmark_format=csv"
 largebmargs="--benchmark_repetitions=20 --benchmark_report_aggregates_only=true --benchmark_format=csv"
 
