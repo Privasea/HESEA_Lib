@@ -17,10 +17,10 @@ endif()
 
 ### To use gcc/g++ on a Macintosh, you must set the Compilers
 ### here, not inside the project
-##if(APPLE)
-##       set(CMAKE_C_COMPILER "/usr/local/bin/gcc-7")
-##       set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-7")
-##endif()
+if(APPLE)
+      set(CMAKE_C_COMPILER "/usr/local/bin/gcc-7")
+      set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-7")
+endif()
 ### TODO: for now, we use CLang for Mac
 
 project (HESea C CXX)
@@ -37,7 +37,7 @@ set(CXX_STANDARD_REQUIRED ON)
 # Build options
 #--------------------------------------------------------------------
 if(CMAKE_BUILD_TYPE)
-  set(RELEASE_TYPES
+  set(RELEASE_TYPES     
       Debug
       Release
       RelWithDebInfo
